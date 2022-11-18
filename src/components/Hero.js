@@ -10,7 +10,7 @@ const Hero = ({currentSection}) => {
                 <nav className='main-nav container'>
                     <ul role="list">
                         <li><a href=""><img src="/logos/logo.png" alt="" className='logo' /></a></li>
-                        <li><button className='resume BTN'>resume {BsDownload()}</button></li>
+                        <li><a href="/maliks resume.pdf" target='_blank'><button className='resume BTN'>resume {BsDownload()}</button></a></li>
                     </ul>
                 </nav>
             </header>
