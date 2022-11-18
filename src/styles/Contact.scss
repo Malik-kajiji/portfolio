@@ -1,0 +1,239 @@
+// vars
+@import './colors.scss';
+$section-trans:1s;
+
+
+@keyframes waves {
+    0% {
+        background-position-x: 1000px;
+    }
+    100% {
+        background-position-x: 0px;
+    }
+}
+
+@keyframes active {
+    0% {
+        transform: translateX(-550px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+.contact-section {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 300vh;
+    scroll-snap-align: start;
+    .accounts {
+        transition: $section-trans/2;
+        height: 0px;
+        overflow: hidden;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        border-left: 6px solid $primary-color;
+        .linkedin,
+        .Fiverr,
+        .email {
+            cursor: pointer;
+            transform: translateX(-550px);
+        }
+        .copy {
+            transition: 0.7s;
+            position: absolute;
+            color: $white-color;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 50% 75%, 25% 100%, 25% 75%, 0% 75%);
+            background-color: rgba($color: #000000, $alpha: 0.7);
+            display: flex;
+            justify-content: center;
+            opacity: 0;
+            text-transform: capitalize;
+        }
+        .email{
+            &:hover {
+                &+p{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    .waves {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 15vh;
+        width: 100%;
+        overflow: hidden;
+        div {
+            position: absolute;
+            height: 100px;
+            width: 100%;
+            background-size: 1000px;
+            bottom: 0;
+            background-image: url('../../public/wave.png');
+        }
+        .wave1 {
+            animation: waves 8s infinite linear;
+            opacity: 0.8;
+        }
+        .wave2 {
+            animation: waves 4s infinite linear;
+        }
+        .wave3 {
+            animation: waves 12s infinite linear reverse;
+            opacity: 0.4;
+        }
+        .wave4 {
+            animation: waves 10s infinite linear reverse;
+            opacity: 0.6;
+        }
+    }
+}
+
+.contact-section.active {
+    .linkedin,
+    .Fiverr,
+    .email {
+        animation: active;
+        animation-duration: $section-trans;
+        animation-fill-mode: forwards;
+        animation-delay: $section-trans/2;
+    }
+}
+
+
+
+@media only screen and (min-width: 1081px) {
+    .contact-section.active {
+        .accounts {
+            height: 500px;
+            padding-bottom: 100px;
+            padding-left: 10px;
+        }
+    }
+    .accounts {
+        bottom: 25vh;
+        left: 18%;
+        .linkedin {
+            width: 100px;
+            .image {
+                width: 100px;
+            }
+        }
+        .Fiverr {
+            width: 100px;
+            .image {
+                width: 100px;
+            }
+        }
+        .copy {
+            padding-top: 10px;
+            width: 120px;
+            height: 80px;
+            top: 250px;
+            left: 400px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1080px) {
+    .contact-section.active {
+        .accounts {
+            height: 400px;
+            padding-bottom: 100px;
+            padding-left: 10px;
+        }
+    }
+    .accounts {
+        bottom: 35vh;
+        left: 25%;
+        .linkedin {
+            width: 80px;
+            .image {
+                width: 80px;
+            }
+        }
+        .Fiverr {
+            width: 80px;
+            .image {
+                width: 80px;
+            }
+        }
+        .copy {
+            padding-top: 8px;
+            width: 110px;
+            height: 70px;
+            top: 170px;
+            left: 360px;
+        }
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    .contact-section.active {
+        .accounts {
+            height: 350px;
+            padding-bottom: 100px;
+            padding-left: 10px;
+        }
+    }
+    .accounts {
+        bottom: 35vh;
+        left: 20%;
+        .linkedin {
+            width: 70px;
+            .image {
+                width: 70px;
+            }
+        }
+        .Fiverr {
+            width: 70px;
+            .image {
+                width: 70px;
+            }
+        }
+        .copy {
+            padding-top: 6px;
+            width: 100px;
+            height: 60px;
+            top: 140px;
+            left: 360px;
+        }
+    }
+}
+
+@media only screen and (max-width: 780px) {
+    .contact-section.active {
+        .accounts {
+            height: 300px;
+            padding-bottom: 100px;
+            padding-left: 10px;
+        }
+    }
+    .accounts {
+        bottom: 40vh;
+        left: 10%;
+        .linkedin {
+            width: 50px;
+            .image {
+                width: 50px;
+            }
+        }
+        .Fiverr {
+            width: 50px;
+            .image {
+                width: 50px;
+            }
+        }
+        .copy {
+            padding-top: 3px;
+            width: 80px;
+            height: 40px;
+            top: 120px;
+            left: 160px;
+        }
+    }
+}

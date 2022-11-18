@@ -1,0 +1,191 @@
+// vars
+@import './colors.scss';
+$section-trans:1s;
+
+@keyframes progress {
+    0%{
+        width: 0%;
+    }
+    100% {
+        width: var(--p);;
+    }
+}
+
+@keyframes skillActive {
+    0%{
+        transform:translateY(-50px) scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform:translateY(0px) scale(1);
+        opacity: 1;
+    }
+}
+
+.skill-set-section {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 200vh;
+    scroll-snap-align: start;
+    .skills-container {
+        height: 100vh;
+        .skills {
+            position: relative;
+            top: 0vh;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            transition: $section-trans;
+            .skill {
+                position: relative;
+                opacity: 0;
+                .image {
+                    position: absolute;
+                    height: 100%;
+                    left: 0;
+                    top: 0;
+                }
+                .skill-name {
+                    position: absolute;
+                    top: 0;
+                }
+                .percentage {
+                    position: absolute;
+                }
+                .progress {
+                    position: absolute;
+                    border: 2px solid $primary-color;
+                    border-radius: 10px;
+                    padding: 0;
+                    span {
+                        position: absolute;
+                        top: -2px;
+                        background-color: $primary-color;
+                        height:calc(100% + 4px);
+                        border-radius: 10px 0 0 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.skill-set-section.active {
+    .skills {
+        top: 5vh;
+        .skill {
+            animation: skillActive;
+            animation-duration: 0.5s;
+            animation-delay: var(--d);
+            animation-fill-mode: forwards;
+            .progress {
+                span {
+                    animation: progress;
+                    animation-delay: var(--d);
+                    animation-duration: 2s;
+                    animation-fill-mode: forwards;
+                }
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1081px){
+        .skills {
+            grid-column: 1/11;
+            .skill {
+                width: 500px;
+                height: 100px;
+                margin: 40px 30px;
+                .skill-name {
+                    left: 120px;
+                }
+                .percentage {
+                    right: 30px;
+                    bottom: 30px;
+                }
+                .progress {
+                    width: 340px;
+                    height: 20px;
+                    left: 120px;
+                    bottom: 10px;
+                }
+            }
+        }
+}
+
+@media only screen and (max-width: 1080px) {
+    .skills {
+        grid-column: 1/11;
+        .skill {
+            width: 420px;
+            height: 80px;
+            margin: 40px 20px;
+            .skill-name {
+                left: 100px;
+            }
+            .percentage {
+                right: 15px;
+                bottom: 30px;
+            }
+            .progress {
+                width: 300px;
+                height: 15px;
+                left: 100px;
+                bottom: 10px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    .skills {
+        grid-column: 1/11;
+        .skill {
+            width: 350px;
+            height: 80px;
+            margin: 40px 10px;
+            .skill-name {
+                left: 90px;
+            }
+            .percentage {
+                right: 0px;
+                bottom: 30px;
+            }
+            .progress {
+                width: 260px;
+                height: 15px;
+                left: 90px;
+                bottom: 10px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 780px) {
+    .skills {
+        grid-column: 1/7;
+        justify-content: space-around;
+        .skill {
+            width: 270px;
+            height: 50px;
+            margin: 0px;
+            .skill-name {
+                left: 60px;
+            }
+            .percentage {
+                right: 0px;
+                bottom: 30px;
+            }
+            .progress {
+                width: 210px;
+                height: 15px;
+                left: 60px;
+                bottom: 10px;
+            }
+        }
+    }
+}

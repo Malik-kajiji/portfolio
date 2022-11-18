@@ -1,0 +1,265 @@
+@import './colors.scss';
+$section-trans:1s;
+
+// top right labels animation
+@keyframes labelsCurrent{
+    0%{
+        transform: rotateZ(-270deg);
+    }
+    100% {
+        transform: rotateZ(-360deg);
+    }
+}
+@keyframes labels{
+    0%{
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(-270deg);
+    }
+}
+// to hide scrollbar
+    .animated-back-ground::-webkit-scrollbar {
+        display: none;
+    }
+    .animated-back-ground {
+        -ms-overflow-style: none;  
+        scrollbar-width: none;
+    }
+    .animated-back-ground {
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        background-color: $BG-color;
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+        
+        // top right labels
+        .lables {
+            z-index: 888;
+            position: fixed;
+            right: 0;
+            span {
+                position: absolute;
+                color: $text-color2;
+                background-color: $secondary-color;
+                transform-origin: right;
+                transform: rotateZ(-270deg);
+                overflow: hidden;
+                clip-path: polygon(20% 0, 20% 0, 100% 0, 100% 100%, 20% 100%, 20% 100%, 0 50%);
+                animation-name: labels;
+                animation-duration: $section-trans;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                text-transform: uppercase;
+            }
+            .current {
+                transform: rotateZ(0deg);
+                animation-name: labelsCurrent;
+                animation-duration: $section-trans;
+            }
+        }
+        // the buttons that help scroll throw the web
+        .sections-btns {
+            z-index: 888;
+            position: fixed;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: space-between;
+            button {
+                background-color: $white-color;
+                border: 1px solid $primary-color;
+                transition: $section-trans;
+            }
+        }
+        @media only screen and (min-width: 781px) {
+            .sections-btns {
+                width: 80px;
+                height: 100px;
+                button {
+                    width: 50px;
+                    height: 8px;
+                    border-radius: 4px;
+                }
+                .chosen-btn {
+                    width: 80px;
+                }
+            }
+        }
+        @media only screen and (max-width: 780px) {
+            .sections-btns {
+                width: 50px;
+                height: 90px;
+                button {
+                    width: 30px;
+                    height: 8px;
+                    border-radius: 4px;
+                }
+                .chosen-btn {
+                    width: 50px;
+                }
+            }
+        }
+        // the animation for the backGround Text for DeskTop
+        @keyframes text-DS {
+            0%{
+                border-right: 40px solid transparent;
+            }
+            100% {
+                border-right: 40px solid $white-color;
+            }
+        }
+        // the animation for the backGround Text for phone
+        @keyframes text-PH {
+            0%{
+                border-right: 10px solid transparent;
+            }
+            100% {
+                border-right: 10px solid $white-color;
+            }
+        }
+        .back-ground-text {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            font-family: 'Leckerli One', cursive;
+            color: $secondary-color;
+            overflow: hidden;
+            animation: text-DS 0.7s infinite alternate;
+            transition: 0.75s;
+            white-space: nowrap;
+        }
+        .back-ground-text.Hide{
+            width: 0%;
+        }
+    }
+
+
+@media only screen and (min-width:1081px) {
+        .animated-back-ground {
+            height: 100vh;
+            .lables {
+                span {
+                    top: 0;
+                    right: -25px;
+                    padding-right: 40px;
+                    height: 40px;
+                    width: 340px;
+                }
+            }
+            .back-ground-text {
+                font-size: 200px;
+            }
+            .back-ground-text.text1{
+                width: 1100px;
+            }
+            .back-ground-text.text2{
+                width: 710px;
+            }
+            .back-ground-text.text3{
+                width: 800px;
+            }
+            .back-ground-text.text4{
+                width: 680px;
+            }
+        }
+    }
+
+@media only screen and (max-width:1080px) {
+        .animated-back-ground {
+            height: 100vh;
+            .lables {
+                span {
+                    top: 0;
+                    right: -25px;
+                    padding-right: 40px;
+                    height: 40px;
+                    width: 280px;
+                }
+            }
+            .back-ground-text {
+                font-size: 160px;
+            }
+            .back-ground-text.text1{
+                width: 900px;
+            }
+            .back-ground-text.text2{
+                width: 580px;
+            }
+            .back-ground-text.text3{
+                width: 650px;
+            }
+            .back-ground-text.text4{
+                width: 540px;
+            }
+        }
+    }
+
+@media only screen and (max-width:960px) {
+        .animated-back-ground {
+            height: 100vh;
+            .lables {
+                span {
+                    top: 0;
+                    right: -25px;
+                    padding-right: 40px;
+                    height: 40px;
+                    width: 270px;
+                }
+            }
+            .back-ground-text {
+                font-size: 120px;
+            }
+            .back-ground-text.text1{
+                width: 700px;
+            }
+            .back-ground-text.text2{
+                width: 450px;
+            }
+            .back-ground-text.text3{
+                width: 500px;
+            }
+            .back-ground-text.text4{
+                width: 420px;
+            }
+        }
+    }
+
+@media only screen and (max-width:780px) {
+        .animated-back-ground {
+            height: 100vh;
+            .lables {
+                span {
+                    top: 0;
+                    right: -25px;
+                    padding-right: 40px;
+                    height: 25px;
+                    width: 210px;
+                }
+            }
+            .back-ground-text {
+                font-size: 40px;
+                animation: text-PH 0.7s infinite alternate;
+            }
+            .back-ground-text.text1{
+                width: 230px;
+            }
+            .back-ground-text.text2{
+                width: 150px;
+            }
+            .back-ground-text.text3{
+                width: 160px;
+            }
+            .back-ground-text.text4{
+                width: 140px;
+            }
+        }
+    }
