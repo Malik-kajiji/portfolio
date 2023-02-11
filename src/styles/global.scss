@@ -100,12 +100,14 @@ a {
 :root {
     --heading-FS:54px;
     --heading2-FS:40px;
+    --heading3-FS:32px;
     --normal-FS:28px;
     --footer-FS:20px;
     --Btn-FS:30px;
 
     --heading-FW:400;
     --heading2-FW:700;
+    --heading3-FW:600;
     --normal-FW:600;
     --footer-FW:300;
     --Btn-FW:700;
@@ -114,6 +116,7 @@ a {
     :root {
         --heading-FS:46px;
         --heading2-FS:36px;
+        --heading3-FS:26px;
         --normal-FS:24px;
         --footer-FS:16px;
         --Btn-FS:26px;
@@ -123,6 +126,7 @@ a {
     :root {
         --heading-FS:34px;
         --heading2-FS:20px;
+        --heading3-FS:18px;
         --normal-FS:16px;
         --footer-FS:12px;
         --Btn-FS:20px;
@@ -139,6 +143,10 @@ a {
 .TXT-heading2 {
     font-size: var(--heading2-FS);
     font-weight: var(--heading2-FW);
+}
+.TXT-heading3 {
+    font-size: var(--heading3-FS);
+    font-weight: var(--heading3-FW);
 }
 .TXT-normal {
     font-size: var(--normal-FS);

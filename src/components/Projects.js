@@ -21,28 +21,27 @@ const Projects = ({currentSection}) => {
             <article className='projects-container' 
                     style={{transform: `rotate(${containerRotation})`}}>
                 <div className='card first-card'>
-                    <img src="/projects/ecommerce.png" alt="" className='image'/>
-                    <h2 className='project-name TXT-heading2'>e-commerce site</h2>
+                <img src="/projects/crypto-tracker.png" alt="" />
+                    <h2 className='project-name TXT-heading2'>crypto tracker</h2>
                     <div className='details'>
                         <h2 className='TXT-normal'>
                             about the project :
                         </h2>
                         <p className='TXT-footer'>
-                            A fully working full stack e-commerce store, with ability to pay and create a demo accounts.
+                            a crypto app that shows you all needed info such as currencies, exchanges, with ability to create accounts and add coins to watch list.
                         </p>
                         <h2 className='TXT-normal'>
                             used technologies :
                         </h2>
                         <ul className='TXT-footer'>
-                            <li>React JS</li>
-                            <li>Next JS</li>
-                            <li>Sanity</li>
-                            <li>Stripe</li>
-                            <li>Sass</li>
+                            <li>React</li>
+                            <li>Redux</li>
+                            <li>Typescript</li>
+                            <li>Firebase</li>
                         </ul>
                         <div className='Btns'>
-                            <a href="https://github.com/Malik-kajiji/e-commerce-store" target='_blank'><button className='BTN'>{FiGithub()}</button></a>
-                            <a href="https://e-commerce-store-msj1.vercel.app" target='_blank'><button className='BTN'>{MdOutlineOpenInNew()}</button></a>
+                            <a href="https://github.com/Malik-kajiji/crypto-tracker" rel="noreferrer" target='_blank'><button className='BTN'>{FiGithub()}</button></a>
+                            <a href="https://crypto-tracker.online" rel="noreferrer" target='_blank'><button className='BTN'>{MdOutlineOpenInNew()}</button></a>
                         </div>
                     </div>
                 </div>
@@ -65,36 +64,12 @@ const Projects = ({currentSection}) => {
                             <li>JavaScript</li>
                         </ul>
                         <div className='Btns'>
-                            <a href="https://github.com/Malik-kajiji/weather-app" target='_blank'><button className='BTN'>{FiGithub()}</button></a>
-                            <a href="http://weather-app.online" target='_blank'><button className='BTN'>{MdOutlineOpenInNew()}</button></a>
+                            <a href="https://github.com/Malik-kajiji/weather-app" rel="noreferrer" target='_blank'><button className='BTN'>{FiGithub()}</button></a>
+                            <a href="http://weather-app.online" rel="noreferrer" target='_blank'><button className='BTN'>{MdOutlineOpenInNew()}</button></a>
                         </div>
                     </div>
                 </div>
                 <div className='card third-card'>
-                    <img src="/projects/speed-writing-game.png" alt="" />
-                    <h2 className='project-name TXT-heading2'>speed writing game</h2>
-                    <div className='details'>
-                        <h2 className='TXT-normal'>
-                            about the project :
-                        </h2>
-                        <p className='TXT-footer'>
-                            a game that tests your writing speed, with ability to set the difficulty and some cool sounds.
-                        </p>
-                        <h2 className='TXT-normal'>
-                            used technologies :
-                        </h2>
-                        <ul className='TXT-footer'>
-                            <li>Html</li>
-                            <li>Sass</li>
-                            <li>JavaScript</li>
-                        </ul>
-                        <div className='Btns'>
-                            <a href="https://github.com/Malik-kajiji/simple-game" target='_blank'><button className='BTN'>{FiGithub()}</button></a>
-                            <a href="http://speed-writing-test.online" target='_blank'><button className='BTN'>{MdOutlineOpenInNew()}</button></a>
-                        </div>
-                    </div>
-                </div>
-                <div className='card forth-card'>
                     <img src="/projects/questions-game.png" alt="" />
                     <h2 className='project-name TXT-heading2'>questions game</h2>
                     <div className='details'>
@@ -114,8 +89,34 @@ const Projects = ({currentSection}) => {
                             <li>React JS</li>
                         </ul>
                         <div className='Btns'>
-                            <a href="https://github.com/Malik-kajiji/random-question-game" target='_blank'><button className='BTN'>{FiGithub()}</button></a>
-                            <a href="https://random-question-game.online" target='_blank'><button className='BTN'>{MdOutlineOpenInNew()}</button></a>
+                            <a href="https://github.com/Malik-kajiji/random-question-game" rel="noreferrer" target='_blank'><button className='BTN'>{FiGithub()}</button></a>
+                            <a href="https://random-question-game.online" rel="noreferrer" target='_blank'><button className='BTN'>{MdOutlineOpenInNew()}</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div className='card forth-card'>
+                <img src="/projects/ecommerce.png" alt="" className='image'/>
+                    <h2 className='project-name TXT-heading2'>e-commerce site</h2>
+                    <div className='details'>
+                        <h2 className='TXT-normal'>
+                            about the project :
+                        </h2>
+                        <p className='TXT-footer'>
+                            A fully working full stack e-commerce store, with ability to pay and create a real accounts.
+                        </p>
+                        <h2 className='TXT-normal'>
+                            used technologies :
+                        </h2>
+                        <ul className='TXT-footer'>
+                            <li>React JS</li>
+                            <li>Next JS</li>
+                            <li>Sanity</li>
+                            <li>Stripe</li>
+                            <li>Firebase</li>
+                        </ul>
+                        <div className='Btns'>
+                            <a href="https://github.com/Malik-kajiji/e-commerce-store" rel="noreferrer" target='_blank'><button className='BTN'>{FiGithub()}</button></a>
+                            <a href="https://e-commerce-store-msj1.vercel.app" rel="noreferrer" target='_blank'><button className='BTN'>{MdOutlineOpenInNew()}</button></a>
                         </div>
                     </div>
                 </div>

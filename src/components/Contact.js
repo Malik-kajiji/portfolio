@@ -14,11 +14,11 @@ const Contact = ({currentSection}) => {
     return ( 
         <section className={`contact-section ${currentSection === 'contact'?'active':''}`}>
             <article className='accounts'>
-                <a href="https://www.linkedin.com/in/malik-kajiji-50b029257/" target='_blank' className='linkedin'>
+                <a href="https://www.linkedin.com/in/malik-kajiji/" target='_blank' className='linkedin'>
                     <img src="/logos/linkedin.png" alt="" className='image'/>
                 </a>
-                <a href="https://www.fiverr.com/share/BopA3l" target='_blank' className='Fiverr'>
-                    <img src="/logos/Fiverr.png" alt="" className='image'/>
+                <a href="https://www.upwork.com/freelancers/~0167b1e4c5a52fa214" target='_blank' className='Fiverr'>
+                    <img src="/logos/upwork.png" alt="" className='image'/>
                 </a>
                 <p className='email TXT-heading2' onClick={handleCopy}>contact@malikkajiji.online</p>
                 <p className='copy TXT-normal'> copy </p>

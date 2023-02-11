@@ -9,14 +9,14 @@ import BackGround from './components/BackGround';
 function App() {
   const [currentSection,setCurrentSection] = useState('introduction');
   return (
-    <div className="App">
+    <main className="App">
       <BackGround setCurrentSection={setCurrentSection}>
         <Hero currentSection={currentSection} />
         <Projects currentSection={currentSection} />
         <SkillSet currentSection={currentSection} />
         <Contact currentSection={currentSection} />
       </BackGround>
-    </div>
+    </main>
   );
 }
 

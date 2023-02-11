@@ -129,25 +129,37 @@ $section-trans:1s;
 .message-box.hidden {
     background-color: rgba($color: #000000, $alpha: 0.0);
     .message-form {
-        transform:translate(-50%,-50%) rotate3d(0, 1, 0, 90deg);
+        top: 0;
+        left: 50%;
+        transform: translate(-50%,-100%);
     }
     .succes {
-        transform:translate(-50%,-50%) rotate3d(0, 1, 0, 90deg);
+        top: 0;
+        left: 50%;
+        transform: translate(-50%,-100%);
     }
     .fail {
-        transform:translate(-50%,-50%) rotate3d(0, 1, 0, 90deg);
+        top: 0;
+        left: 50%;
+        transform: translate(-50%,-100%);
     }
 }
 .message-box.showen {
     background-color: rgba($color: #000000, $alpha: 0.6);
     .message-form {
-        transform:translate(-50%,-50%) rotate3d(0, 1, 0, 0deg);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
     }
     .succes {
-        transform:translate(-50%,-50%) rotate3d(0, 1, 0, 0deg);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
     }
     .fail {
-        transform:translate(-50%,-50%) rotate3d(0, 1, 0, 0deg);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
     }
 }
 @keyframes failAnimation {

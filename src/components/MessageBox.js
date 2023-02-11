@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {MdOutlineMail,MdClose,MdOutlineSmsFailed,MdOutlineCheck} from 'react-icons/md';
 import '../styles/MessageBox.scss';
-import { client } from '../lib/client';
 
 
 const MessageBox = ({sectionMessageBtn}) => {
@@ -32,33 +31,20 @@ const MessageBox = ({sectionMessageBtn}) => {
             }
         })
     }
-
-
     function handleSubmit(e){
         e.preventDefault();
-        const {name,email,message} = messageData
+        const { name, email , message} = messageData;
         if(name === '' || email === '' || message === ''){
             setErrorMessage(true)
         }else {
+            const scriptURL = process.env.REACT_APP_MESSAGES_URL
+            const form = document.forms['messages']
             setErrorMessage(false)
             setLoading(true)
-            const contact = {
-                _type:'contact',
-                name:name,
-                email:email,
-                message:message
-            }
-
-        client.create(contact)
-            .then(()=>{
-                setSucces(true)
-            })
-            .catch(()=>{
-                setFail(true)
-            })
-            .finally(()=>{
-                setLoading(false)
-            })
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => setSucces(true))
+            .catch(error => setFail(true))
+            .finally(()=> setLoading(false))
         }
     }
 
@@ -76,7 +62,7 @@ const MessageBox = ({sectionMessageBtn}) => {
             <article className={`message-box ${showForm?'showen':'hidden'}`}>
                 {errorMessage && <p className='TXT-normal error-message'>make sure to fill all the inputs</p>}
                 {!succes && !fail && 
-                <form action="" className='message-form'>
+                <form action="" className='message-form' name='messages'>
                     <button 
                         className='close-Btn'
                         onClick={(e)=>handleShowForm(e)}

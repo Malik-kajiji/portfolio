@@ -7,6 +7,30 @@ const BackGround = ({children,setCurrentSection}) => {
     const [sectionMessageBtn,setSectionMessageBtn]=useState('introdution-Btn');
 
     useEffect(()=>{
+        const BackGround = document.querySelector('.animated-back-ground');
+        let WinHeight = window.innerHeight;
+        window.addEventListener('resize',()=>{
+            WinHeight = window.innerHeight;
+        })
+
+        BackGround.addEventListener('wheel',(e)=>{
+            e.preventDefault(); 
+            const scrollPosition = Math.round(BackGround.scrollTop);
+            if(scrollPosition === 0 || scrollPosition === WinHeight || scrollPosition === WinHeight*2 ){
+                if(e.wheelDeltaY > 0){
+                    BackGround.scrollTo(0,scrollPosition - WinHeight)
+                } else if (e.wheelDeltaY < 0){
+                    BackGround.scrollTo(0,scrollPosition + WinHeight)
+                }
+            } else if(scrollPosition === WinHeight*3) {
+                if(e.wheelDeltaY > 0){
+                    BackGround.scrollTo(0,scrollPosition - WinHeight)
+                }
+            }
+        })
+    },[])
+
+    useEffect(()=>{
         // vars
         const BackGround = document.querySelector('.animated-back-ground');
         const labels = document.querySelectorAll('.lables span');
@@ -49,7 +73,7 @@ const BackGround = ({children,setCurrentSection}) => {
                 setCurrentSection('introduction')
                 setSectionMessageBtn('introdution-Btn')
                 SectionsController(0)
-            }else if(scrollPosition >= WinHeight-4 && scrollPosition <= WinHeight+4){
+            }else if(scrollPosition >= WinHeight-WinHeight/10 && scrollPosition <= WinHeight+WinHeight/10){
                 setTimeout(()=>{
                     BackGroundText.textContent='projects';
                     BackGroundText.classList.add('text2');
@@ -57,7 +81,7 @@ const BackGround = ({children,setCurrentSection}) => {
                 setCurrentSection('projects')
                 setSectionMessageBtn('projects-Btn');
                 SectionsController(1)
-            }else if(scrollPosition >= WinHeight*2-4 && scrollPosition <= WinHeight*2+4){
+            }else if(scrollPosition >= WinHeight*2-WinHeight/10 && scrollPosition <= WinHeight*2+WinHeight/10){
                 setTimeout(()=>{
                     BackGroundText.textContent='skill Set';
                     BackGroundText.classList.add('text3');
@@ -65,7 +89,7 @@ const BackGround = ({children,setCurrentSection}) => {
                 setCurrentSection('skill-set')
                 setSectionMessageBtn('skill-set-Btn');
                 SectionsController(2)
-            }else if(scrollPosition >= WinHeight*3-4 && scrollPosition <= WinHeight*3+4){
+            }else if(scrollPosition >= WinHeight*3-WinHeight/10 && scrollPosition <= WinHeight*3+WinHeight/10){
                 setTimeout(()=>{
                     BackGroundText.textContent='contact';
                     BackGroundText.classList.add('text4');
