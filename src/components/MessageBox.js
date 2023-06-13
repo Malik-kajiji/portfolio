@@ -52,7 +52,7 @@ const MessageBox = ({sectionMessageBtn}) => {
         <>
             <button className={`BTN message-Btn ${sectionMessageBtn}`} onClick={handleShowForm}>
                 <p>
-                    send me a message
+                    let's talk
                 </p>
                 <span>
                     {MdOutlineMail()}

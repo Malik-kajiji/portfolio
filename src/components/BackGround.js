@@ -5,7 +5,9 @@ import '../styles/BackGround.scss';
 
 const BackGround = ({children,setCurrentSection}) => {
     const [sectionMessageBtn,setSectionMessageBtn]=useState('introdution-Btn');
-
+    const [timeOutHide,setTimeOutHide] = useState();
+    const [timeOutText,setTimeOutText] = useState();
+    
     useEffect(()=>{
         const BackGround = document.querySelector('.animated-back-ground');
         let WinHeight = window.innerHeight;
@@ -60,40 +62,48 @@ const BackGround = ({children,setCurrentSection}) => {
         // adding scrolling event to background
         BackGround.addEventListener('scroll',()=>{
             const scrollPosition = Math.floor(BackGround.scrollTop);
-            BackGroundText.classList.add('Hide');
             BackGroundText.classList.remove('text1');
             BackGroundText.classList.remove('text2');
             BackGroundText.classList.remove('text3');
             BackGroundText.classList.remove('text4');
-            if(scrollPosition === 0 ){
-                setTimeout(()=>{
+            BackGroundText.classList.add('Hide');
+            clearTimeout(timeOutHide)
+            setTimeOutHide(setTimeout(() => {
+                BackGroundText.classList.remove('Hide');
+            }, 500));
+            if(scrollPosition >= 0 &&  scrollPosition <= WinHeight/2){
+                clearTimeout(timeOutText)
+                setTimeOutText(setTimeout(()=>{
                     BackGroundText.textContent='introduction';
                     BackGroundText.classList.add('text1');
-                },250)
+                },250))
                 setCurrentSection('introduction')
                 setSectionMessageBtn('introdution-Btn')
                 SectionsController(0)
-            }else if(scrollPosition >= WinHeight-WinHeight/10 && scrollPosition <= WinHeight+WinHeight/10){
-                setTimeout(()=>{
+            }else if(scrollPosition >= WinHeight/2 && scrollPosition <= WinHeight*2 - WinHeight/2){
+                clearTimeout(timeOutText)
+                setTimeOutText(setTimeout(()=>{
                     BackGroundText.textContent='projects';
                     BackGroundText.classList.add('text2');
-                },250)
+                },250))
                 setCurrentSection('projects')
                 setSectionMessageBtn('projects-Btn');
                 SectionsController(1)
-            }else if(scrollPosition >= WinHeight*2-WinHeight/10 && scrollPosition <= WinHeight*2+WinHeight/10){
-                setTimeout(()=>{
+            }else if(scrollPosition >= WinHeight*2 - WinHeight/2 && scrollPosition <= WinHeight*3 - WinHeight/2){
+                clearTimeout(timeOutText)
+                setTimeOutText(setTimeout(()=>{
                     BackGroundText.textContent='skill Set';
                     BackGroundText.classList.add('text3');
-                },250)
+                },250))
                 setCurrentSection('skill-set')
                 setSectionMessageBtn('skill-set-Btn');
                 SectionsController(2)
-            }else if(scrollPosition >= WinHeight*3-WinHeight/10 && scrollPosition <= WinHeight*3+WinHeight/10){
-                setTimeout(()=>{
+            }else if(scrollPosition >= WinHeight*3 - WinHeight/2){
+                clearTimeout(timeOutText)
+                setTimeOutText(setTimeout(()=>{
                     BackGroundText.textContent='contact';
                     BackGroundText.classList.add('text4');
-                },250)
+                },250))
                 setCurrentSection('contact')
                 setSectionMessageBtn('contact-Btn');
                 SectionsController(3)

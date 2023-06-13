@@ -34,7 +34,7 @@ $section-trans:1s;
         overflow-x: hidden;
         background-color: $BG-color;
         scroll-behavior: smooth;
-        
+        // scroll-snap-type: y mandatory;
         // top right labels
         .lables {
             z-index: 888;
@@ -133,12 +133,15 @@ $section-trans:1s;
             color: $secondary-color;
             overflow: hidden;
             animation: text-DS 0.7s infinite alternate;
-            transition: 0.75s;
             white-space: nowrap;
+            transition: 0.5s;
+            &.Hide {
+                width: 0px;
+            }
         }
-        .back-ground-text.Hide{
-            width: 0%;
-        }
+        // .back-ground-text.Hide{
+        //     width: 0%;
+        // }
     }
 
 
@@ -154,9 +157,6 @@ $section-trans:1s;
                     width: 340px;
                 }
             }
-            .back-ground-text {
-                font-size: 200px;
-            }
             .back-ground-text.text1{
                 width: 1100px;
             }
@@ -168,6 +168,12 @@ $section-trans:1s;
             }
             .back-ground-text.text4{
                 width: 680px;
+            }
+            .back-ground-text {
+                font-size: 200px;
+                &.Hide {
+                    width: 0px;
+                }
             }
         }
     }
@@ -184,9 +190,6 @@ $section-trans:1s;
                     width: 280px;
                 }
             }
-            .back-ground-text {
-                font-size: 160px;
-            }
             .back-ground-text.text1{
                 width: 900px;
             }
@@ -199,11 +202,18 @@ $section-trans:1s;
             .back-ground-text.text4{
                 width: 540px;
             }
+            .back-ground-text {
+                font-size: 160px;
+                &.Hide {
+                    width: 0px;
+                }
+            }
         }
     }
 
 @media only screen and (max-width:960px) {
         .animated-back-ground {
+            scroll-snap-type: y mandatory;
             height: 100vh;
             .lables {
                 span {
@@ -213,9 +223,6 @@ $section-trans:1s;
                     height: 40px;
                     width: 270px;
                 }
-            }
-            .back-ground-text {
-                font-size: 120px;
             }
             .back-ground-text.text1{
                 width: 700px;
@@ -229,11 +236,18 @@ $section-trans:1s;
             .back-ground-text.text4{
                 width: 420px;
             }
+            .back-ground-text {
+                font-size: 120px;
+                &.Hide {
+                    width: 0px;
+                }
+            }
         }
     }
 
 @media only screen and (max-width:780px) {
         .animated-back-ground {
+            scroll-snap-type: y mandatory;
             height: 100vh;
             .lables {
                 span {
@@ -243,10 +257,6 @@ $section-trans:1s;
                     height: 25px;
                     width: 210px;
                 }
-            }
-            .back-ground-text {
-                font-size: 40px;
-                animation: text-PH 0.7s infinite alternate;
             }
             .back-ground-text.text1{
                 width: 230px;
@@ -259,6 +269,13 @@ $section-trans:1s;
             }
             .back-ground-text.text4{
                 width: 140px;
+            }
+            .back-ground-text {
+                font-size: 40px;
+                animation: text-PH 0.7s infinite alternate;
+                &.Hide {
+                    width: 0px;
+                }
             }
         }
     }
